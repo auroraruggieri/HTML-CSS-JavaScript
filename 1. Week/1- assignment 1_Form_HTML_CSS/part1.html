@@ -1,0 +1,66 @@
+<! DOCTYPE html>
+<html>
+<head>
+  <title>Dating Web Site Assessment</title>
+  <meta name="author" content="Aurora Ruggieri">
+</head>
+<body>
+  <h1>Please Enter Your Details For Our Dating Website</h1>
+  <form action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="post" enctype="multipart/form-data">
+    <fieldset>
+	  <legend>Your Face</legend>
+	    <label for="fileToUpload">Your Image:</label>
+	     <input type="file" name="fileToUpload" required> <br>
+	    <label for="preview">Image Preview:</label>
+	     <img id="preview"> <br>
+	</fieldset> <br>
+	
+	<fieldset>
+	  <legend>Your General Details</legend>
+	    <label for="fullName">Name:</label> 
+	     <input type="text" name="fullName" id="fullName" placeholder="Your full name" required> <br>
+	    <label for="gender">Gender:</label>
+	     <input type="radio" id="gender" name="gender" class="box" required> Male <input type="radio" name="gender" class="box" required> Female <br>
+	    <label for="age">Age:</label>
+	     <input type="number" id="age" min="0" max="99" step="1" value="18" name="age" required> <br>
+	    <label for="birthday">Date of birth:</label>
+		  <input type="date" id="birthday" name="birthday"> <br>
+		<label for="color">Favorite color</label>
+		  <input type="color" id="color" name="color"> </br>
+		<label for ="country">Wich country:</label>
+		 <select id="country" name="country">
+		  <option value="ns">no selection</option>
+		  <option value="hi">Hilo</option>
+		  <option value="ba">Bali</option>
+		  <option value="ad">Aberdeen</option>
+		  <option value="lp">Las Palmas</option>
+		  <option value="fu">Funchal</option>
+		 </select>
+	</fieldset> <br>
+	
+	<fieldset>
+	  <legend>Your Indicators</legend>
+	    <label for="height">Height:</label> 
+	     Short <input type="range" id="height" name="height" min="0" max="100"> Tall <br>
+		 <label for="salary">Salary:</label> 
+	     Poor <input type="range" id="salary" name="salary" min="0" max="100"> Rich 
+	</fieldset> <br>
+	
+	<fieldset>
+	  <legend>Your Contac Information</legend>
+	    <label for="email">Email:</label> 
+	     <input type="text" id="email" name="email" required> <br>
+		<label for="mobile">Mobile:</label> 
+	     <input type="text" id="mobile" name="mobile"> <br>
+		<label for="address">Adrdess:</label> 
+	     <textarea rows="2" cols="30" id="address" name="address"> 
+		 </textarea> <br>
+		<label for="method-of-contact">Method to contact you: </label>
+		 <input type="checkbox" name="method-of-contact" value="email"> <label for="email" class="box">Email</label>	
+		 <input type="checkbox" name="method-of-contact" value="whatsapp"> <label for="whatsapp" class="box">Whatsapp</label> 
+		 <input type="checkbox" name="method-of-contact" value="in-app-chat"> <label for="app" class="box">In-app chat</label> <br>
+	</fieldset> <br>
+	     <input type="submit" value="Submit">
+  </form>
+</body>
+</html>

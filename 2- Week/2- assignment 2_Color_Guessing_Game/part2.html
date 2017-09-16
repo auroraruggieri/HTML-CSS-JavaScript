@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Color Guessing game</title>
+     </head>
+   <body onload="do_game()">
+<script>
+//1.        	
+var colors = ["antiquewhite", "blueviolet", "crimson", "deepskyblue", "forestgreen", "gold", "lawngreen", "magenta", "palegreen", "skyblue"];
+var colors_message = colors.join(", ");
+var target;
+var guess_input_text;
+var guess_input;
+var finished = false;
+var guesses = 0;
+var ask_again = false;
+
+
+//2
+function do_game() {
+	//2.1
+	var target_index= Math.floor(Math.random() * (colors.length - 0)) + 0;
+	//2.2
+	target = target_index;
+
+	var answer = String(colors[target]).toLowerCase();
+	//Alert correct answer for testing purposes
+	alert("The correct answer is: " + answer);
+
+
+    guess_input_text = prompt("I am thinking of one of these colors:\n\n" + colors_message + "\n\n What is the color am I thinking of?");
+    //2.3
+	while (!finished) {
+        if(ask_again){
+          	guess_input_text = prompt("I am thinking of one of these colors:\n\n" + colors_message + "\n\n What is the color am I thinking of?");
+        }
+            guess_input = guess_input_text.toLowerCase();
+            guesses += 1;
+            finished = check_guess(colors.indexOf(guess_input));
+        }
+    }
+
+//3
+function check_guess(guess_index) {
+        ask_again = true;
+        if (guess_index == -1) {
+            alert("Sorry, I don't recognize your color. \n\n Please try again.");
+            return false;
+        } else if (guess_index > target) {
+            alert("Sorry, your guess is not correct!\n\nHint: Your color is alphabetically higher than mine.\n\nPlease try again.");
+            return false;
+        } else if (guess_index < target) {
+            alert("Sorry, your guess is not correct!\n\nHint: Your color is alphabetically lower than mine.\n\nPlease try again.");
+            return false;
+        } else {
+          	ask_again = true;
+            alert("Congratulations! You have guessed the color!\n\nIt took you " + guesses + " guesses to finish the game!\n\nYou can see the colour in the background.");
+            var myBody = document.getElementsByTagName("body")[0];
+            myBody.style.background = colors[target];
+            return true;
+        }
+     }
+         
+</script>
+</body>
+</html>
